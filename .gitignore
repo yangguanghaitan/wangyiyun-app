@@ -1,0 +1,7 @@
+# 可以避免在提交代码时把我们不想上传的文件提交到git中
+node_modules/
+.vscode/
+.idea
+.DS_Store
+dist/
+dist.zip
