@@ -1,20 +1,20 @@
 <template>
   <div class="home">
     <topNav></topNav>
-    <testButtonVant></testButtonVant>
+    <swipe></swipe>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import topNav from '@/components/home/topNav.vue'
-import testButtonVant from '@/components/home/testButtonVant.vue'
+import swipe from '@/components/home/swipe.vue'
 
 export default {
   name: 'HomeView',
   components: {
     topNav,
-    testButtonVant,
+    swipe,
   }
 }
 </script>
