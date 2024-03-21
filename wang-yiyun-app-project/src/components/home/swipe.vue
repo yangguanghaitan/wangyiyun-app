@@ -1,8 +1,8 @@
 <template>
   <div id="swipeTop">
     <van-swipe :autoplay="3000" lazy-render>
-      <van-swipe-item v-for="image in images" :key="image">
-        <img :src="image" />
+      <van-swipe-item v-for="image in state.images" :key="image">
+        <img :src="image.pic" />
       </van-swipe-item>
     </van-swipe>
   </div>
@@ -10,13 +10,23 @@
 
 <!-- vue3新的用法 ，组合式 -->
 <script>
+import axios from 'axios'
+import {reactive,onMounted} from 'vue'
 export default {
   setup() {
-    const images = [
+    const state = reactive({
+      images:[
       'https://fastly.jsdelivr.net/npm/@vant/assets/apple-1.jpeg',
       'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
-    ];
-    return { images };
+    ],
+    })
+    onMounted(()=>{
+      axios.get('http://localhost:3000/banner?type=2').then((res)=>{
+        console.log(res);
+        state.images=res.data.banners
+      })
+    })
+    return { state };
   },
 };
 </script>
