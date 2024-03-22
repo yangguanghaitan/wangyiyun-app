@@ -10,7 +10,7 @@
 
 <!-- vue3新的用法 ，组合式 -->
 <script>
-import axios from 'axios'
+import {getBanner} from '@/request/api/home.js'
 import {reactive,onMounted} from 'vue'
 export default {
   setup() {
@@ -20,11 +20,14 @@ export default {
       'https://fastly.jsdelivr.net/npm/@vant/assets/apple-2.jpeg',
     ],
     })
-    onMounted(()=>{
-      axios.get('http://localhost:3000/banner?type=2').then((res)=>{
-        console.log(res);
-        state.images=res.data.banners
-      })
+    onMounted(async ()=>{
+      // axios.get('http://localhost:3000/banner?type=2').then((res)=>{
+      //   console.log(res);
+      //   state.images=res.data.banners
+      // })
+      let res=await getBanner();
+      console.log(res);
+      state.images=res.data.banners
     })
     return { state };
   },
