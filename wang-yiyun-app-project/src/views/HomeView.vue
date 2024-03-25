@@ -3,6 +3,7 @@
     <topNav></topNav>
     <swipe></swipe>
     <iconList></iconList>
+    <musicList></musicList>
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 import topNav from '@/components/home/topNav.vue'
 import swipe from '@/components/home/swipe.vue'
 import iconList from '@/components/home/iconList.vue'
+import musicList from '@/components/home/musicList.vue'
 
 export default {
   name: 'HomeView',
@@ -18,6 +20,7 @@ export default {
     topNav,
     swipe,
     iconList,
+    musicList,
   }
 }
 </script>
