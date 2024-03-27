@@ -2,7 +2,7 @@
     <div class="itemMusicTop">
         <img class="bgimg" :src="music.coverImgUrl" alt=""/>
         <div class="musicTopLeft">
-            <svg class="icon" aria-hidden="true">
+            <svg class="icon" aria-hidden="true" @click="$router.go(-1)">
                 <use xlink:href="#icon-kuaitui"></use>
             </svg>
             <span>歌单</span>
