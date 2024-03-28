@@ -71,7 +71,7 @@
 <script>
 export default {
     setup(props){
-        console.log(props)
+        // console.log(props)
         // console.log(JSON.parse(sessionStorage.getItem("itemDetail")).music.creator);
         if((props.music.creator="")){
             props.music.creator=JSON.parse(sessionStorage.getItem("itemDetail")).music.creator;

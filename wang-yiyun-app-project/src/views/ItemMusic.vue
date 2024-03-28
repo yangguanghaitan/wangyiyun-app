@@ -1,9 +1,12 @@
 <template>
     <itemMusicTopVue :music="state.music"></itemMusicTopVue>
+    <itemMusicListVue></itemMusicListVue>
 </template>
 
 <script>
 import itemMusicTopVue from '@/components/item/itemMusicTop.vue'
+//歌单列表
+import itemMusicListVue from '@/components/item/itemMusicList.vue'
 import {getMusicItemList} from '@/request/api/item/itemMusic.js'
 import {reactive,onMounted} from 'vue'
 import {useRoute} from 'vue-router'
@@ -26,7 +29,8 @@ export default {
     return {state};
     },
     components:{
-        itemMusicTopVue
+        itemMusicTopVue,
+        itemMusicListVue
     }
 }
 </script>
